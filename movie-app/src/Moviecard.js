@@ -1,7 +1,17 @@
 import React from "react";
 import avenger from './Images/avenger.jpg'
 class MovieCard extends React.Component{
+      constructor() {
+            super();
+            this.state = {
+                  title: "Avenger!!",
+                  plot: "Action Fiction Drama Technology AI",
+                  price: "499",
+                  rating: "4.9"
+            }
+      }
       render() {
+            const { title, plot, price, rating } = this.state;
             return(
             <div className="main">
                   <div className="movie-card">
@@ -9,11 +19,11 @@ class MovieCard extends React.Component{
                                     <img src={avenger} alt="Poster" />
                         </div>
                               <div className="right">
-                                    <div className="title">Avenger</div>
-                                    <div className="plot">Action Fiction </div>
-                                    <div className="price">RS 499</div>
+                                    <div className="title">{title}</div>
+                                    <div className="plot"> {plot}</div>
+                                    <div className="price">Rs {price}</div>
                                     <div className="footer">
-                                          <div className="rating">4.8</div>
+                                          <div className="rating">{rating}</div>
 
                                           <div className="star-dis">
                                                 <img src="https://cdn-icons-png.flaticon.com/128/6057/6057365.png" alt="minus" className="str-btn"  />
