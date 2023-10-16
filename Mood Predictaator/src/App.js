@@ -19,19 +19,24 @@ class App extends React.Component {
     };
   }
 
-  handleClick() {
+  handleClick=()=> {
     const moodIndex = Math.floor(Math.random() * MOODS.length);
-    this.setState({ prediction: MOODS[moodIndex] });
+    console.log(MOODS[moodIndex]);
+    this.setState({
+      prediction: MOODS[moodIndex]
+    });
+
   }
 
   render() {
+    const { prediction } = this.state;
     return (
       <div>
         <h1>Mood Predictor</h1>
-        {this.state.prediction && (
+        {prediction && (
           <p>
             Mood predictor has predicted that you mood will be
-            <b> {this.state.prediction} </b>today.
+            <b> {prediction} </b>today.
           </p>
         )}
         <button onClick={this.handleClick}>Predict Mood</button>
