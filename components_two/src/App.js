@@ -1,11 +1,10 @@
-
+import MovieCard from "./MovieCard";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Movie App
-      </header>
-    </div>
+    <>
+      <h1>Movie App</h1>
+        <MovieCard />
+    </>
   );
 }
 
