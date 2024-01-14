@@ -1,5 +1,5 @@
 import React from "react";
-
+import ListItem from "./ListItem";
 class List extends React.Component {
   constructor() {
     super();
@@ -34,7 +34,21 @@ class List extends React.Component {
     const { data } = this.state;
 
     // Code here
-    return <div className="List"></div>;
+    return (
+      <div className="List">
+        {data.map(val => {
+          return (
+            <ListItem
+              key={val.id}
+              name={val.name}
+              link={val.link}
+              icon={val.icon}
+              bgColor={val.bgColor}
+            />
+          );
+        })}
+      </div>
+    );
   }
 }
 
